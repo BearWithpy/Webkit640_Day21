@@ -109,6 +109,23 @@ async function connectDB() {
 }
 
 ///////--------------------------------
+
+router.route("/signin_process").post((req, res) => {
+    res.redirect("/html/signin.html")
+})
+
+router.route("/signin").post((req, res) => {
+    const {
+        userName: name,
+        userID: id,
+        userPassword: password,
+        userPasswordConfirm: passwordConfirm,
+    } = req.body
+    console.log(req.body)
+
+    res.redirect("/html/login.html")
+})
+
 router.route("/login").post((req, res) => {
     const { userID: id, userPassword: password } = req.body
 
